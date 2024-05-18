@@ -70,6 +70,8 @@ bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
+bindsym $mod+p exec --no-startup-id ~/.config/rofi/launchers/type-7/launcher.sh
+
 
 # focus_follows_mouse no
 
@@ -289,7 +291,9 @@ exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 exec --no-startup-id sleep 1; nitrogen --restore; sleep 1; picom -b
 #exec --no-startup-id sleep 10; start_conky_maia
-exec_always --no-startup-id sleep 3; ~/.config/polybar/launch.sh
+exec_always --no-startup-id sleep 3; ~/.config/polybar/launch.sh --hack
+exec_always --no-startup-id sleep 3; ~/.config/polybar/hack/scripts/pywal.sh ~/Pictures/ghibli-japanese-walled-garden.png
+
 
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
@@ -349,7 +353,7 @@ gaps outer -2
 # gaps outer all plus 5
 
 # Smart gaps (gaps used if only more than one container on the workspace)
-smart_gaps off
+smart_gaps on
 
 # Smart borders (draw borders around container only if it is not the only container on this workspace) 
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
